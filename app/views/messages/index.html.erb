@@ -1,12 +1,19 @@
 <% @messages.each do |message| %>
 
-<div class="container">
-	<div class="col-md-4">
-		<div class="news">
-			<h2><%= message.title %></h2>
-			<%= link_to "View Message", message_path(message), class: "btn btn-primary"%>
-
-		</div>
+<div class="col-md-4">
+	<div class="news">
+		<div class="panel-group">
+			<div class="panel panel-primary">
+							<h3>News</h3>
+			</div>
+			<div class="panel-body">
+				<h2 class="news-title"><%= message.title %></h2>
+					<div class="button-8">
+				    <div class="eff-8"></div>
+				   		<%= link_to "View News", message_path(message)%>
+				  </div>
+			</div>
+		</div>	
 	</div>
 </div>
 

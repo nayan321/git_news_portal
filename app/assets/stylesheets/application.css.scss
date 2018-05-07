@@ -15,11 +15,241 @@
  */
 @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|Raleway');
 
-@import "bootstrap-mincer";
-@import "bootstrap";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
 // font-family: 'Indie Flower', cursive;
 // font-family: 'Gloria Hallelujah', cursive;
+$bgDefault   : #2a5a84;
+$bgHighlight : #843a3a;
+$colDefault  : #ecf0f1;
+$colHighlight: #fbff00;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color:#1d476b;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus, {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
+
+.invalid-feedback{
+  color:red;
+}
+
 body {
 font-family: 'Raleway', sans-serif;
+}
+.news{
+position:relative;
+  flex-wrap:wrap;
+  justify-content: space-around;
+}
+.panel h3{
+font-size:2em;
+font-weight: bold;
+}
+.news .panel{
+	background-color:#345a5e;
+	color: #fff;
+
+}
+.news .panel h3{
+	text-align:center;
+	background-color:none;
+	border:none;
+
+}
+.panel-group .panel{
+	border-radius:none;
+}
+.news .panel-group{
+	background-color:#ddd;
+	border: 1px solid #dddddd;
+	border-radius: 15px;
+	height: 400px;
+}
+
+.button-8{
+  width:140px;
+  height:50px;
+  border:2px solid #345a5e;
+  float:left;
+  text-align:center;
+  cursor:pointer;
+  position:relative;
+  box-sizing:border-box;
+  overflow:hidden;
+  margin:0 0 40px 50px;
+  border-radius: 5px;
+  float:right;
+  margin-top: 100px;
+  font-weight:bold;
+}
+.button-8 a{
+  font-family:arial;
+  font-size:16px;
+  color:#fff;
+  text-decoration:none;
+  line-height:50px;
+  transition:all .5s ease;
+  z-index:2;
+  position:relative;
+}
+.eff-8{
+  width:140px;
+  height:50px;
+  border:70px solid #345a5e;
+  position:absolute;
+  transition:all .5s ease;
+  z-index:1;
+  box-sizing:border-box;
+}
+.button-8:hover .eff-8{
+  border:0px solid #345a5e;
+}
+.button-8:hover a{
+  color:#345a5e;
+}
+
+
+.button-4{
+  width:140px;
+  height:50px;
+  border:2px solid #2e6da4;
+  float:left;
+  text-align:center;
+  cursor:pointer;
+  position:relative;
+  box-sizing:border-box;
+  overflow:hidden;
+  margin:0 0 40px 50px;
+  float:right;
+}
+.button-4 a{
+  font-family:arial;
+  font-size:16px;
+  color:#34495e;
+  text-decoration:none;
+  line-height:50px;
+  transition:all .5s ease;
+  z-index:2;
+  position:relative;
+}
+.eff-4{
+  width:140px;
+  height:50px;
+  left:-140px;
+  background:#2a5a84;
+  position:absolute;
+  transition:all .5s ease;
+  z-index:1;
+}
+.button-4:hover .eff-4{
+  left:0;
+}
+.button-4:hover a{
+  color:#fff;
+}
+
+.form_error_msg{
+  color: red;
+  font-weight:bold;
+}
+.messages{
+  border:3px dashed #345a5e;
+  padding: 20px;
+text-align:center;
+}
+.newsdescription{
+  text-align:left;
+  font-size:1.2em;
+
+}
+.replydatearea i{
+  color: #337ab7;
+font-family: 'Gloria Hallelujah', cursive;
+}
+.messages .datearea i{
+  color: #337ab7;
+font-family: 'Gloria Hallelujah', cursive;
+}
+.messages h2{
+  color: #345a5e;
+ // font-family: 'Indie Flower', cursive;
+// font-family: 'Gloria Hallelujah', cursive;
+}
+h3.peoplereply{
+font-family: 'Indie Flower', cursive;
+text-decoration: underline;
+}
+.commentreply{
+  float:right;
+  position:relative;
+}
+.edit_comment .btn{
+display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+    font-weight:bold;
+}
+h2.news-title{
+  font-size: 1.5em;
+  text-align:center;
+}
+.newsbuttonactions .btn-danger{
+  float:right;
 }

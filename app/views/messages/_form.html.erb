@@ -1,7 +1,29 @@
 <div class="container">
+
+
 	<%= simple_form_for @message do |f| %>
-	<%= f.input :title, label: "News Title" %>
-	<%= f.input :description %>
-	<%= f.button :submit %>
+<% if @message.errors.any? %>
+		<ul>
+			<% @message.errors.full_messages.each do |message| %>
+			<li class="form_error_msg"><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+
+	<div class="form-group">
+		<%= f.label :'News Title' %>
+		<%= f.text_field :title, class: "form-control"%>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :description %>
+		<%= f.text_area :description, class: "form-control"%>
+	</div>
+
+	<div class="actions">
+		<%= f.submit :submit, class: "btn btn-primary" %>
+	</div>
+
 	<% end %>
 </div>
